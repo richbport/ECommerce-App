@@ -1,4 +1,6 @@
 function renderBooks() {
+  const booksWrapper = document.querySelector('.books');
+  console.log(booksWrapper)
   `<div class="book">
     <figure class="book__img--wrapper">
       <img class="book__img" src="assets/crack the coding interview.png" alt="">
