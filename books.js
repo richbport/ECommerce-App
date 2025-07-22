@@ -3,14 +3,14 @@ function renderBooks() {
 
   const books = getBooks();
   console.log(books);
-  
+
   booksWrapper.innerHTML = 
   `<div class="book">
     <figure class="book__img--wrapper">
-      <img class="book__img" src="assets/crack the coding interview.png" alt="">
+      <img class="book__img" src="${books[0].url}" alt="">
     </figure>
     <div class="book__title">
-      Crack the Coding Interview
+    ${books[0].title}
     </div>
     <div class="book__ratings">
       <i class="fas fa-star"></i>
