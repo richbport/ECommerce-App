@@ -20,7 +20,7 @@ function renderBooks() {
       <i class="fas fa-star-half-alt"></i>
     </div>
     <div class="book__price">
-      <span class="book__price--normal">$59.95</span> $14.95
+      <span class="book__price--normal">$${books[0].originalPrice}</span> $${books[0].salePrice}
     </div>
   </div>`
 }
@@ -35,7 +35,7 @@ function getBooks() {
   return [
     {
       id: 1,
-      title: "Crack the Coding Interview",
+      title: "Crack the Coding Intervie1w",
                 url: "assets/crack the coding interview.png",
       originalPrice: 49.95,
       salePrice: 14.95,
