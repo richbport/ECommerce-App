@@ -2,10 +2,9 @@ function renderBooks() {
   const booksWrapper = document.querySelector('.books');
 
   const books = getBooks();
-  console.log(books);
-
-  booksWrapper.innerHTML = 
-  `<div class="book">
+  
+  const booksHTML = books.map(book => {
+    return `<div class="book">
     <figure class="book__img--wrapper">
       <img class="book__img" src="${books[0].url}" alt="">
     </figure>
@@ -23,6 +22,9 @@ function renderBooks() {
       <span class="book__price--normal">$${books[0].originalPrice}</span> $${books[0].salePrice}
     </div>
   </div>`
+  })
+  // booksWrapper.innerHTML = 
+  console.log(books)
 }
 
 setTimeout(() => {
