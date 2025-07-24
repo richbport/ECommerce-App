@@ -25,10 +25,12 @@ function renderBooks() {
   })
   .join("");
 
-  console.log(booksHTML);
-
   booksWrapper.innerHTML = booksHTML;
   // booksWrapper.innerHTML = 
+}
+
+function filterBooks(event) {
+  console.log(event)
 }
 
 setTimeout(() => {
@@ -41,7 +43,7 @@ function getBooks() {
   return [
     {
       id: 1,
-      title: "Crack the Coding Intervie1w",
+      title: "Crack the Coding Interview",
                 url: "assets/crack the coding interview.png",
       originalPrice: 49.95,
       salePrice: 14.95,
