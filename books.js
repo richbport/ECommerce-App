@@ -30,7 +30,9 @@ function renderBooks() {
 }
 
 function filterBooks(event) {
-  console.log(event)
+  if (event.target.value === 'LOW_TO_HIGH') {
+    console.log('sort by low to high')
+  }
 }
 
 setTimeout(() => {
