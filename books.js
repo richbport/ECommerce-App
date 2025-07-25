@@ -4,9 +4,7 @@ function renderBooks(filter) {
   const books = getBooks();
 
   if (filter === "LOW_TO_HIGH") {
-    console.log(filter);
-    const filteredBooks = books.sort((a, b) => a.originalPrice - b.originalPrice);
-    console.log(filteredBooks);
+    books.sort((a, b) => a.originalPrice - b.originalPrice);
   }
   
   const booksHTML = books
