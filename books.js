@@ -4,11 +4,13 @@ function renderBooks(filter) {
   const books = getBooks();
 
   if (filter === "LOW_TO_HIGH") {
-    console.log(filter)
-    books.sort((a, b) => a.originalPrice - b.originalPrice);
+    console.log(filter);
+    const filteredBooks = books.sort((a, b) => a.originalPrice - b.originalPrice);
+    console.log(filteredBooks);
   }
   
-  const booksHTML = books.map((book) => {
+  const booksHTML = books
+  .map((book) => {
     return `<div class="book">
     <figure class="book__img--wrapper">
       <img class="book__img" src="${book.url}" alt="">
@@ -31,7 +33,6 @@ function renderBooks(filter) {
   .join("");
 
   booksWrapper.innerHTML = booksHTML;
-  // booksWrapper.innerHTML = 
 }
 
 function filterBooks(event) {
