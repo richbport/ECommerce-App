@@ -14,10 +14,13 @@ function renderBooks(filter) {
   }
 
   let ratingHTML = "";
+  let rating = 4.5;
 
-  for (let i = 0; i < 4; ++i) {
-    ratingHTML += '<i class="fas fa-star"></i>'
+  for (let i = 0; i < Math.floor(rating); ++i) {
+    ratingHTML += '<i class="fas fa-star"></i>\n'
   }
+
+  if (Number.isInteger(rating))
 
   console.log(ratingHTML)
   
