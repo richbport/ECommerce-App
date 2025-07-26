@@ -14,17 +14,13 @@ function renderBooks(filter) {
   }
 
   let ratingHTML = "";
-  let rating = 2.5;
-
   for (let i = 0; i < Math.floor(rating); ++i) {
     ratingHTML += '<i class="fas fa-star"></i>\n'
   }
-
   if (!Number.isInteger(rating)) {
     ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
   }
 
-  console.log(ratingHTML)
   
   const booksHTML = books
   .map((book) => {
@@ -48,9 +44,20 @@ function renderBooks(filter) {
   booksWrapper.innerHTML = booksHTML;
 }
 
+function ratingsHTML(rating) {
+  let ratingHTML = "";
+    for (let i = 0; i < Math.floor(rating); ++i) {
+      ratingHTML += '<i class="fas fa-star"></i>\n'
+    }
+    if (!Number.isInteger(rating)) {
+      ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
+    }
+}
+
 function filterBooks(event) {
     renderBooks(event.target.value);
 }
+
 
 setTimeout(() => {
   renderBooks();
