@@ -12,6 +12,14 @@ function renderBooks(filter) {
   else if (filter === "RATING") {
     books.sort((a, b) => b.rating - a.rating);
   }
+
+  let ratingHTML = "";
+
+  for (let i = 0; i < 4; ++i) {
+    ratingHTML += '<i class="fas fa-star"></i>'
+  }
+
+  console.log(ratingHTML)
   
   const booksHTML = books
   .map((book) => {
@@ -129,7 +137,7 @@ function getBooks() {
       url: "assets/book-7.jpg",
       originalPrice: 40,
       salePrice: null,
-      rating: 4,
+      rating: 2,
     },
     {
       id: 11,
