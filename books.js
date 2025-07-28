@@ -12,15 +12,6 @@ function renderBooks(filter) {
   else if (filter === "RATING") {
     books.sort((a, b) => b.rating - a.rating);
   }
-
-  let ratingHTML = "";
-  for (let i = 0; i < Math.floor(rating); ++i) {
-    ratingHTML += '<i class="fas fa-star"></i>\n'
-  }
-  if (!Number.isInteger(rating)) {
-    ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
-  }
-
   
   const booksHTML = books
   .map((book) => {
