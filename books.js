@@ -37,12 +37,12 @@ function renderBooks(filter) {
 
 function priceHTML(originalPrice, salePrice) {
   if (!salePrice) {
-    return `${originalPrice}`
+    return `$${originalPrice.toFixed(2)}`
   }
-  return 'there is a sale'
   console.log(originalPrice, salePrice);
-{/* <span class="book__price--normal">$59.95</span> $14.95 */}
+  return 'there is a sale'
 }
+/* <span class="book__price--normal">$59.95</span> $14.95 */
 
 function ratingsHTML(rating) {
   let ratingHTML = "";
