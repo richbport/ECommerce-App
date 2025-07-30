@@ -1,43 +1,41 @@
-function renderBooks(filter) {
+async function renderBooks(filter) {
   const booksWrapper = document.querySelector(".books");
+  const books = await getBooks();
 
-  const books = getBooks();
-  console.log(books)
+  if (filter === "LOW_TO_HIGH") {
+    books.sort(
+      (a, b) =>
+        (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)
+    );
+  } else if (filter === "HIGH_TO_LOW") {
+    books.sort(
+      (a, b) =>
+        (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)
+    );
+  } else if (filter === "RATING") {
+    books.sort((a, b) => b.rating - a.rating);
+  }
 
-//   if (filter === "LOW_TO_HIGH") {
-//     books.sort(
-//       (a, b) =>
-//         (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)
-//     );
-//   } else if (filter === "HIGH_TO_LOW") {
-//     books.sort(
-//       (a, b) =>
-//         (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)
-//     );
-//   } else if (filter === "RATING") {
-//     books.sort((a, b) => b.rating - a.rating);
-//   }
+  const booksHTML = books
+    .map((book) => {
+      return `<div class="book">
+    <figure class="book__img--wrapper">
+      <img class="book__img" src="${book.url}" alt="">
+    </figure>
+    <div class="book__title">
+    ${book.title}
+    </div>
+    <div class="book__ratings">
+      ${ratingsHTML(book.rating)}
+    </div>
+    <div class="book__price">
+    ${priceHTML(book.originalPrice, book.salePrice)}
+    </div>
+    </div>`;
+    })
+    .join("");
 
-//   const booksHTML = books
-//     .map((book) => {
-//       return `<div class="book">
-//     <figure class="book__img--wrapper">
-//       <img class="book__img" src="${book.url}" alt="">
-//     </figure>
-//     <div class="book__title">
-//     ${book.title}
-//     </div>
-//     <div class="book__ratings">
-//       ${ratingsHTML(book.rating)}
-//     </div>
-//     <div class="book__price">
-//     ${priceHTML(book.originalPrice, book.salePrice)}
-//     </div>
-//     </div>`;
-//     })
-//     .join("");
-
-//   booksWrapper.innerHTML = booksHTML;
+  booksWrapper.innerHTML = booksHTML;
 }
 
 function priceHTML(originalPrice, salePrice) {
@@ -65,7 +63,7 @@ function filterBooks(event) {
 }
 
 setTimeout(() => {
-  renderBooks();
+  // renderBooks();
 });
 
 // FAKE DATA
