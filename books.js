@@ -65,7 +65,9 @@ setTimeout(() => {
 
 // FAKE DATA
 function getBooks() {
-  return [
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
     {
       id: 1,
       title: "Crack the Coding Interview",
@@ -154,5 +156,7 @@ function getBooks() {
       salePrice: null,
       rating: 4.5,
     },
-  ];
+  ]);
+      }, 1000);
+  });
 }
