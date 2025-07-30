@@ -451,7 +451,7 @@ select {
   max-width: 200px;
 }
 
- {
+ .books__loading {
   display: flex;
   align-items: center;
   justify-content: center;
