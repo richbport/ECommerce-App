@@ -461,7 +461,7 @@ select {
 }
 
 .fa-spinner {
-  animation: rotate 600ms infinite linear;
+  animation: rotate 900ms infinite linear;
 }
 
 @keyframes rotate {
