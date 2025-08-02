@@ -105,6 +105,7 @@ button:active {
 
 .nav__link:hover {
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .nav__link--primary {
@@ -352,6 +353,7 @@ FEATURES
 
 .book__title:hover {
   text-decoration: underline;
+  text-underline-offset: 2px;
   cursor: not-allowed;
 }
 
